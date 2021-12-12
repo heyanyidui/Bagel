@@ -5,6 +5,12 @@ Models are in `model.py`.
 # Dependencies
 python >= 3.7
 
+```bash
+git clone git@github.com:heyanyidui/Bagel.git
+```
+
+then `cd Bagel`
+
 ``` bash
 pip install -r requirements.txt
 ```
