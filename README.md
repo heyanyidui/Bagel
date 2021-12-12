@@ -12,6 +12,8 @@ git clone git@github.com:heyanyidui/Bagel.git
 then `cd Bagel`
 
 ``` bash
+pip install torch==0.4.1.post2 -i https://mirrors.aliyun.com/pypi/simple/
+
 pip install -r requirements.txt
 ```
 
