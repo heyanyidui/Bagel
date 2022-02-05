@@ -29,7 +29,7 @@ class _IndexSampler(object):
 class KpiFrameDataLoader(DataLoader):
     def __init__(self, dataset: Dataset, batch_size, shuffle=False, drop_last=False):
         super().__init__(dataset, batch_size=batch_size, shuffle=shuffle, drop_last=drop_last)
-        self.dataset = dataset
+        # self.dataset = dataset
         self.shuffle = shuffle
         self.index_sampler = None  # type: _IndexSampler
 
