@@ -14,8 +14,8 @@ df2 = pd.read_hdf('data/phase2_ground_truth.hdf', index_col=None)
 
 df2['KPI ID'] = df2['KPI ID'].astype('str')
 
-df1 = df1[df1['KPI ID'] == KPIs[3]]
-df2 = df2[df2['KPI ID'] == KPIs[3]]
+df1 = df1[df1['KPI ID'] == KPIs[0]]
+df2 = df2[df2['KPI ID'] == KPIs[0]]
 
 # 合并
 df = df1.append(df2, ignore_index=True)
@@ -36,7 +36,6 @@ test_kpi = test_kpi.normalize(mean=train_kpi_mean, std=train_kpi_std)
 model = DonutX(cuda=False, max_epoch=100, latent_dims=8, network_size=[100, 100])
 model.fit(train_kpi.label_sampling(0.), valid_kpi)
 y_prob = model.predict(test_kpi.label_sampling(0.))
-
 y_prob = range_lift_with_delay(y_prob, test_kpi.label)
 precisions, recalls, thresholds = precision_recall_curve(test_kpi.label, y_prob)
 f1_scores = (2 * precisions * recalls) / (precisions + recalls)
